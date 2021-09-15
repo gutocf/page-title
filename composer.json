@@ -1,0 +1,37 @@
+{
+    "name": "gutocf/page-title",
+    "description": "Page title component for CakePHP 4",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "title",
+        "components"
+    ],
+    "homepage": "https://github.com/gutocf/page-title",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Augusto César Ferreira",
+            "email": "guto@notato.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "cakephp/cakephp": "^4.1.0"
+    },
+    "require-dev": {
+        "cakephp/bake": "^2.0.3",
+        "cakephp/debug_kit": "^4.1",
+        "phpunit/phpunit": "~8.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gutocf\\PageTitle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gutocf\\PageTitle\\Test\\": "tests"
+        }
+    }
+}
