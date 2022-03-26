@@ -23,7 +23,9 @@
         "cakephp/bake": "^2.6",
         "phpunit/phpunit": "^9.5",
         "phpstan/phpstan": "^1.5",
-        "cakedc/cakephp-phpstan": "^2.0"
+        "cakedc/cakephp-phpstan": "^2.0",
+        "squizlabs/php_codesniffer": "^3.6",
+        "cakephp/cakephp-codesniffer": "^4.5"
     },
     "autoload": {
         "psr-4": {
@@ -37,6 +39,13 @@
     },
     "scripts": {
         "coverage": "vendor/bin/phpunit --colors=always --bootstrap=tests/bootstrap.php --configuration=phpunit.xml --coverage-html=tmp/_reports/coverage/",
-        "phpstan": "vendor/bin/phpstan"
+        "phpstan": "vendor/bin/phpstan",
+        "phpcs": "phpcs --colors -p -s --standard=CakePHP src/ tests/",
+        "phpcbf": "phpcbf --colors -p -s --standard=CakePHP src/ tests/"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

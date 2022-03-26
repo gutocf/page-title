@@ -25,6 +25,7 @@ jobs:
       with:
         php-version: ${{ matrix.php-version }}
         extensions: mbstring, intl, pdo_sqlite
+        tools: cs2pr
         coverage: pcov
 
     - name: Composer install
@@ -46,6 +47,9 @@ jobs:
     - name: Submit code coverage
       if: matrix.php-version == '8.0'
       uses: codecov/codecov-action@v1
+
+    - name: Run PHP CodeSniffer
+      run: vendor/bin/phpcs --standard=CakePHP --report=checkstyle src/ tests/ | cs2pr
 
     - name: Run phpstan
       if: success() || failure()
