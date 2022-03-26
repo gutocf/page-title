@@ -31,7 +31,7 @@ $this->loadComponent('Gutocf/PageTitle.PageTitle', [
    'separator' => ' | ', //optional, default = ' / '
 ]); 
 ```
-You will need to load the component in controllers or application's AppController (recomended). 
+You need to load the component in controllers or application's AppController (recomended). 
  
 ## Usage
 
