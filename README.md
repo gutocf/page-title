@@ -22,7 +22,7 @@ Install the plugin with composer
     
 ### Component load
 
-Load the component from App\Controller\AppController:
+Load the component in *App\Controller\AppController*:
 
 ```php
 $this->loadComponent('Gutocf/PageTitle.PageTitle', [
