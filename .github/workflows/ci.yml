@@ -37,7 +37,10 @@ jobs:
     
     - name: Run PHPUnit
       run: |
-        vendor/bin/phpunit
+        vendor/bin/phpunit       
+        if [[ ${{ matrix.php-version }} == '8.0' ]]; then
+          vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
+        fi
         
     - name: Submit code coverage
       if: matrix.php-version == '8.0'
