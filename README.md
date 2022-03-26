@@ -31,10 +31,11 @@ $this->loadComponent('Gutocf/PageTitle.PageTitle', [
    'separator' => ' | ', //optional, default = ' / '
 ]); 
 ```
+You will need to load the component in controllers or application's AppController (recomended). 
  
 ## Usage
 
-You will need to load the component in controllers or application's AppController. To add titles to your page, simply call PageTitle::add method with one or more parameters:
+To add titles to your page, simply call PageTitle::add method with one or more parameters:
 ```php
 $this->PageTitle->add('Articles', 'Add');
 ```
