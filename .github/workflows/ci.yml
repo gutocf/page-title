@@ -16,17 +16,17 @@ jobs:
       matrix:
         php-version: ['8.0', '8.1']
     name: PHP ${{ matrix.php-version }}
-    
+
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-version }}
         extensions: mbstring, intl, pdo_sqlite
-        coverage: none
-        
+        coverage: pcov
+
     - name: Composer install
       run: |
         if [[ ${{ matrix.php-version }} == '8.1' ]]; then
@@ -34,15 +34,15 @@ jobs:
         else
           composer update
         fi
-    
+
     - name: Run PHPUnit
       run: |
-        vendor/bin/phpunit       
+        vendor/bin/phpunit
         if [[ ${{ matrix.php-version }} == '8.0' ]]; then
           export CODECOVERAGE=1
           vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
         fi
-        
+
     - name: Submit code coverage
       if: matrix.php-version == '8.0'
       uses: codecov/codecov-action@v1
