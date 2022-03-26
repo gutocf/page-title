@@ -7,8 +7,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://packagist.org/packages/gutocf/page-title)
 
 ## Requirements
- - PHP 8.0
- - CakePHP 4.3.+
+ - PHP 8.0+
+ - CakePHP 4.3+
 
 ## Installation
 
@@ -16,17 +16,17 @@ Install the plugin with composer
     
     composer require gutocf/page-title
     
-Load the plugin
+### Plugin load
 
     bin/cake plugin load PageTitle
     
-Load the component
+### Component load
 
 Load the component from App\Controller\AppController:
 
 ```php
 $this->loadComponent('Gutocf/PageTitle.PageTitle', [
-   'default' => 'Default Title', //optional, default = null
+   'default' => 'MyApp Name', //optional, default = null
    'var' => 'var_name_for_views', //optional, default = title
    'separator' => ' | ', //optional, default = ' / '
 ]); 
@@ -34,14 +34,12 @@ $this->loadComponent('Gutocf/PageTitle.PageTitle', [
  
 ## Usage
 
-You will need to load the component in controllers or application AppController
-
-On your controller methods simply call 
+You will need to load the component in controllers or application's AppController. To add titles to your page, simply call PageTitle::add method with one or more parameters:
 ```php
 $this->PageTitle->add('Articles', 'Add');
 ```
 
-The component will set a variable with $config['var'] name for use in the views and templates. You can set the page title by include this code in your template file *src/templates/default.php*
+The component will set a variable with *$config['var']* name for use in the views and templates, in this example *Add | Articles | MyApp Name*. You can set the page title by including this code in the template file *src/templates/default.php*
 
 ```php
 <head>
