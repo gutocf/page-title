@@ -28,7 +28,7 @@ Load the component in *App\Controller\AppController*:
 $this->loadComponent('Gutocf/PageTitle.PageTitle', [
    'default' => 'MyApp Name', //optional, default = null
    'var' => 'var_name_for_views', //optional, default = title
-   'separator' => ' | ', //optional, default = ' / '
+   'separator' => ' :: ', //optional, default = ' / '
 ]); 
 ```
 You need to load the component in controllers or application's AppController (recomended). 
@@ -40,7 +40,7 @@ To add titles to your page, simply call PageTitle::add method with one or more p
 $this->PageTitle->add('Articles', 'Add');
 ```
 
-The component will set a variable with *$config['var']* name for use in the views and templates, in this example **Add | Articles | MyApp Name**. You can set the page title by including this code in the template file *src/templates/default.php*
+The component will set a variable with *$config['var']* name for use in the views and templates, in this example **Add :: Articles :: MyApp Name**. You can set the page title by including this code in the template file *src/templates/default.php*
 
 ```php
 <head>
