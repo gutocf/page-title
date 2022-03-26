@@ -46,3 +46,7 @@ jobs:
     - name: Submit code coverage
       if: matrix.php-version == '8.0'
       uses: codecov/codecov-action@v1
+
+    - name: Run phpstan
+      if: success() || failure()
+      run: vendor/bin/phpstan.phar analyse --error-format=github
