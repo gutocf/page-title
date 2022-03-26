@@ -21,7 +21,9 @@
     },
     "require-dev": {
         "cakephp/bake": "^2.6",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.5",
+        "cakedc/cakephp-phpstan": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +36,7 @@
         }
     },
     "scripts": {
-        "coverage": "vendor/bin/phpunit --colors=always --bootstrap=tests/bootstrap.php --configuration=phpunit.xml --coverage-html=tmp/_reports/coverage/"
+        "coverage": "vendor/bin/phpunit --colors=always --bootstrap=tests/bootstrap.php --configuration=phpunit.xml --coverage-html=tmp/_reports/coverage/",
+        "phpstan": "vendor/bin/phpstan"
     }
 }
