@@ -5,17 +5,16 @@ declare(strict_types=1);
 namespace Gutocf\PageTitle\Controller\Component;
 
 use Cake\Controller\Component;
-use Cake\Collection\Collection;
+use Cake\Collection\CollectionInterface;
 
 /**
  * PageTitle component
  *
- * @property \Cake\Collection\Collection $titles
- * @method \App\Controller\AppController getController()
+ * @property \Cake\Collection\CollectionInterface $titles
  */
 class PageTitleComponent extends Component
 {
-    private Collection $titles;
+    private CollectionInterface $titles;
 
     /**
      * @inheritDoc

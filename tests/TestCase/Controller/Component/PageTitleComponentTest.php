@@ -15,8 +15,8 @@ use Gutocf\PageTitle\Controller\Component\PageTitleComponent;
  */
 class PageTitleComponentTest extends TestCase
 {
-    protected $PageTitle;
-    protected $Controller;
+    protected PageTitleComponent $PageTitle;
+    protected Controller $Controller;
 
     public function setUp(): void
     {
@@ -31,13 +31,13 @@ class PageTitleComponentTest extends TestCase
         unset($this->PageTitle, $this->Controller);
     }
 
-    public function testAdd()
+    public function testAdd(): void
     {
         $this->PageTitle->add('t1');
         $this->assertEquals('t1 / default', $this->PageTitle->getFormattedTitle());
     }
 
-    public function testAddMultiple()
+    public function testAddMultiple(): void
     {
         $actual = $this->PageTitle
             ->add('t1', 't2')
@@ -55,7 +55,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t3 / t2 / t1 / default', $actual);
     }
 
-    public function testChangeSeparator()
+    public function testChangeSeparator(): void
     {
         $this->PageTitle->setConfig('separator', ' - ');
         $actual = $this->PageTitle
@@ -65,7 +65,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t2 - t1 - default', $actual);
     }
 
-    public function testClearAndAdd()
+    public function testClearAndAdd(): void
     {
         $this->PageTitle->add('t1');
         $actual = $this->PageTitle
@@ -75,7 +75,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t2 / default', $actual);
     }
 
-    public function testReset()
+    public function testReset(): void
     {
         $actual = $this->PageTitle
             ->add('t1')
@@ -91,7 +91,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t2 / default', $actual);
     }
 
-    public function testBeforeRender()
+    public function testBeforeRender(): void
     {
         $this->PageTitle
             ->add('t1')
@@ -102,7 +102,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t1 / default', $actual);
     }
 
-    public function testReverseOrder()
+    public function testReverseOrder(): void
     {
         $actual = $this->PageTitle
             ->add('t1')
@@ -117,7 +117,7 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('default / t1 / t2 / t3', $actual);
     }
 
-    public function testChangeVar()
+    public function testChangeVar(): void
     {
         $this->PageTitle->setConfig('var', 'my_title');
         $this->PageTitle
@@ -129,11 +129,13 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t1 / default', $actual);
     }
 
-    public function testIntegrationBeforeRender()
+    public function testIntegrationBeforeRender(): void
     {
         $Controller = new Controller(new ServerRequest(), new Response());
         $Controller->loadComponent('Gutocf/PageTitle.PageTitle', ['default' => 'default']);
-        $Controller->PageTitle->add('t1');
+        /** @var \Gutocf\PageTitle\Controller\Component\PageTitleComponent $PageTitle */
+        $PageTitle = $Controller->components()->get('PageTitle');
+        $PageTitle->add('t1');
         $Controller->getEventManager()->dispatch(new Event('Controller.beforeRender', $Controller));
         $this->assertEquals('t1 / default', $Controller->viewBuilder()->getVar('title'));
     }
