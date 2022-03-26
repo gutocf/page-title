@@ -1,6 +1,6 @@
 {
     "name": "gutocf/page-title",
-    "description": "Page title component for CakePHP 4",
+    "description": "Page Title component for CakePHP 4",
     "type": "cakephp-plugin",
     "keywords": [
         "cakephp",
@@ -16,13 +16,12 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "cakephp/cakephp": "^4.1.0"
+        "php": "^8.0",
+        "cakephp/cakephp": "^4.3.0"
     },
     "require-dev": {
-        "cakephp/bake": "^2.0.3",
-        "cakephp/debug_kit": "^4.1",
-        "phpunit/phpunit": "~8.5.0"
+        "cakephp/bake": "^2.6",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
@@ -33,5 +32,8 @@
         "psr-4": {
             "Gutocf\\PageTitle\\Test\\": "tests"
         }
+    },
+    "scripts": {
+        "coverage": "vendor/bin/phpunit --colors=always --bootstrap=tests/bootstrap.php --configuration=phpunit.xml --coverage-html=tmp/_reports/coverage/"
     }
 }
