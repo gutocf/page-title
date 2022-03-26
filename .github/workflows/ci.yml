@@ -38,3 +38,7 @@ jobs:
     - name: Run PHPUnit
       run: |
         vendor/bin/phpunit
+        
+    - name: Submit code coverage
+      if: matrix.php-version == '8.0'
+      uses: codecov/codecov-action@v1
