@@ -102,6 +102,21 @@ class PageTitleComponentTest extends TestCase
         $this->assertEquals('t1 / default', $actual);
     }
 
+    public function testReverseOrder()
+    {
+        $actual = $this->PageTitle
+            ->add('t1')
+            ->add('t2', 't3')
+            ->getFormattedTitle();
+
+        $this->assertEquals('t3 / t2 / t1 / default', $actual);
+
+        $this->PageTitle->setConfig('reverseOrder', false);
+        $actual = $this->PageTitle->getFormattedTitle();
+
+        $this->assertEquals('default / t1 / t2 / t3', $actual);
+    }
+
     public function testChangeVar()
     {
         $this->PageTitle->setConfig('var', 'my_title');

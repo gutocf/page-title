@@ -24,6 +24,7 @@ class PageTitleComponent extends Component
         'default' => null,
         'separator' => ' / ',
         'var' => 'title',
+        'reverseOrder' => true,
     ];
 
     /**
@@ -88,7 +89,9 @@ class PageTitleComponent extends Component
      */
     public function getFormattedTitle(): string
     {
-        $titles = array_reverse($this->titles->toList());
+        $titles = $this->getConfig('reverseOrder') ?
+            array_reverse($this->titles->toList()) :
+            $this->titles->toList();
 
         return join($this->getConfig('separator'), $titles);
     }

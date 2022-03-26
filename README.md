@@ -13,26 +13,27 @@
 ## Installation
 
 Install the plugin with composer
-    
+
     composer require gutocf/page-title
-    
+
 ### Plugin load
 
     bin/cake plugin load PageTitle
-    
+
 ### Component load
 
 Load the component in *App\Controller\AppController*:
 
 ```php
 $this->loadComponent('Gutocf/PageTitle.PageTitle', [
-   'default' => 'MyApp Name', //optional, default = null
-   'var' => 'var_name_for_views', //optional, default = title
-   'separator' => ' :: ', //optional, default = ' / '
-]); 
+   'default' => 'MyApp Name', //Default page title - optional, default = null
+   'var' => 'var_name_for_views', //Var name to set at view - optional, default = title
+   'separator' => ' :: ', //Titles separator - optional, default = ' / '
+   'reverseOrder' => true, //Display titles in reverse order of inclusion - optional, default = true
+]);
 ```
-You need to load the component in controllers or application's AppController (recomended). 
- 
+You need to load the component in controllers or application's AppController (recomended).
+
 ## Usage
 
 To add titles to your page, simply call PageTitle::add method with one or more parameters:
@@ -40,7 +41,7 @@ To add titles to your page, simply call PageTitle::add method with one or more p
 $this->PageTitle->add('Articles', 'Add');
 ```
 
-The component will set a variable with *$config['var']* name for use in the views and templates, in this example **Add :: Articles :: MyApp Name**. You can set the page title by including this code in the template file *src/templates/default.php*
+In *Controller.beforeRender* event, the component will set a variable with *$config['var']* name for use in the views and templates, in this example **Add :: Articles :: MyApp Name** (Or **MyApp Name :: Articles :: Add** if *reverseOrder* option is false). You can set the page title by including this code in the template file *src/templates/default.php*
 
 ```php
 <head>
