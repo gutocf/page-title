@@ -5,6 +5,8 @@
 [![Latest Stable Version](https://poser.pugx.org/gutocf/page-title/v/stable.svg)](https://packagist.org/packages/gutocf/page-title)
 [![Total Downloads](https://img.shields.io/packagist/dt/gutocf/page-title.svg?style=flat-square)](https://packagist.org/packages/gutocf/page-title)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://packagist.org/packages/gutocf/page-title)
+[![PHPStan](https://img.shields.io/badge/PHPStan-Level%207-brightgreen.svg?style=flat-square&logo=php)](https://shields.io/#/)
+
 
 ## Requirements
  - PHP 8.0+
