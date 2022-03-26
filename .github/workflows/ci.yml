@@ -33,6 +33,7 @@ jobs:
           composer update --ignore-platform-reqs
         else
           composer update
+        fi
     
     - name: Run PHPUnit
       run: |
