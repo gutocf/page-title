@@ -6,6 +6,8 @@ namespace Gutocf\PageTitle\Controller\Component;
 use Cake\Collection\CollectionInterface;
 use Cake\Controller\Component;
 
+use function Cake\Collection\collection;
+
 /**
  * PageTitle component
  *
@@ -18,7 +20,7 @@ class PageTitleComponent extends Component
     /**
      * @inheritDoc
      */
-    protected $_defaultConfig = [
+    protected array $_defaultConfig = [
         'default' => null,
         'separator' => ' / ',
         'var' => 'title',

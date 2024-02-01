@@ -10,8 +10,10 @@
 
 
 ## Requirements
- - PHP 8.0+
- - CakePHP 4.3+
+ - PHP 8.1+
+ - CakePHP 5.0+
+
+Note: For using with PHP 8.0 and CakePHP 4.3+ check out version 1.1.1
 
 ## Installation
 

@@ -22,7 +22,7 @@ class PageTitleComponentTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->Controller = new Controller(new ServerRequest(), new Response());
+        $this->Controller = new Controller(new ServerRequest());
         $this->PageTitle = new PageTitleComponent($this->Controller->components(), ['default' => 'default']);
     }
 
@@ -132,7 +132,7 @@ class PageTitleComponentTest extends TestCase
 
     public function testIntegrationBeforeRender(): void
     {
-        $Controller = new Controller(new ServerRequest(), new Response());
+        $Controller = new Controller(new ServerRequest());
         $Controller->loadComponent('Gutocf/PageTitle.PageTitle', ['default' => 'default']);
         /** @var \Gutocf\PageTitle\Controller\Component\PageTitleComponent $PageTitle */
         $PageTitle = $Controller->components()->get('PageTitle');
