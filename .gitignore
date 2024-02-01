@@ -43,3 +43,4 @@ nbproject/*
 .sass-cache/
 coverage.xml
 .phpunit.cache/test-results
+.phpunit.cache/code-coverage

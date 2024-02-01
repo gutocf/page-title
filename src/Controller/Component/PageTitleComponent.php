@@ -5,7 +5,6 @@ namespace Gutocf\PageTitle\Controller\Component;
 
 use Cake\Collection\CollectionInterface;
 use Cake\Controller\Component;
-
 use function Cake\Collection\collection;
 
 /**

@@ -5,7 +5,6 @@ namespace Gutocf\PageTitle\Test\TestCase\Controller\Component;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-use Cake\Http\Response;
 use Cake\Http\ServerRequest;
 use Cake\TestSuite\TestCase;
 use Gutocf\PageTitle\Controller\Component\PageTitleComponent;
