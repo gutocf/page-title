@@ -35,7 +35,7 @@ jobs:
         run: |
           vendor/bin/phpunit
           export CODECOVERAGE=1
-          vendor/bin/phpunit --verbose --coverage-clover=coverage.xml
+          vendor/bin/phpunit --coverage-clover=coverage.xml
 
       - name: Submit code coverage
         if: matrix.php-version == '8.1'
