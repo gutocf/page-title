@@ -42,3 +42,4 @@ nbproject/*
 # Sass preprocessor
 .sass-cache/
 coverage.xml
+.phpunit.cache/test-results
