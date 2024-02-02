@@ -1,6 +1,6 @@
 # PageTitleComponent
 
-[![Build Status](https://img.shields.io/github/workflow/status/gutocf/page-title/CI/master?style=flat-square)](https://github.com/gutocf/page-title/actions?query=workflow%3ACI+branch%3Amaster)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/gutocf/page-title/ci.yml?branch=master)](https://github.com/gutocf/page-title/actions?query=workflow%3ACI+branch%3Amaster)
 [![Coverage Status](https://img.shields.io/codecov/c/github/gutocf/page-title.svg?style=flat-square)](https://codecov.io/github/gutocf/page-title)
 [![Latest Stable Version](https://poser.pugx.org/gutocf/page-title/v/stable.svg)](https://packagist.org/packages/gutocf/page-title)
 [![Total Downloads](https://img.shields.io/packagist/dt/gutocf/page-title.svg?style=flat-square)](https://packagist.org/packages/gutocf/page-title)
